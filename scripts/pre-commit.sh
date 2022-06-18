@@ -12,6 +12,7 @@ conda activate $CONDA_ENV || fail "Could not activate env"
 
 pip freeze > "$ROOT_DIR/requirements.txt" || fail "Could not output pip packages to 'requirements.txt'"
 
+# Ensure requirements is added to this commit since we may have modified it
 git add "$ROOT_DIR/requirements.txt"
 
 echo -e "Packages Successfully Exported\n"

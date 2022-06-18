@@ -11,6 +11,6 @@ class SampleEndpointBody:
     name: str
     id: int
 
-@app.post("/sample_endpoint")
-def read_item(body: SampleEndpointBody):
+@app.post("/sampleEndpoint")
+def sample_endpoint(body: SampleEndpointBody):
     return body

@@ -1,3 +1,16 @@
 import os
+import typing
+from dataclasses import dataclass
 
-print(os.environ["TEST_ENV_VAR"])
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@dataclass
+class SampleEndpointBody:
+    name: str
+    id: int
+
+@app.post("/sample_endpoint")
+def read_item(body: SampleEndpointBody):
+    return body

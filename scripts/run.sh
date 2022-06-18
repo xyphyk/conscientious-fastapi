@@ -10,4 +10,6 @@ set -o allexport
 source "$ROOT_DIR/.env" || fail "no '.env' found in root folder"
 set +o allexport
 
-python $ROOT_DIR/src/main.py
+echo "$ROOT_DIR/src/main:app"
+
+uvicorn main:app --port $FASTAPI_PORT --app-dir "$ROOT_DIR/src/"

@@ -18,6 +18,6 @@ eval "$(conda shell.bash hook)"
 conda activate $CONDA_ENV || fail "Could not activate env"
 
 # Install packages to new env
-pip install -r requirements.txt || fail "Could not install packages to env"
+pip install -r "$ROOT_DIR/requirements.txt" || fail "Could not install packages to env"
 
 echo -e "\nConscientious Setup Complete"
